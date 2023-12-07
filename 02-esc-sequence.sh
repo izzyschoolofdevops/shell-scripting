@@ -15,3 +15,7 @@ echo -e "Line1\nLine2"
 echo  -e "Line3\tine4"
 
 echo -e Line5
+
+#whenever youre using special characters always enclose them in double quotes 
+# ""  : Double Quotes 
+# ''  : Single Quotes
