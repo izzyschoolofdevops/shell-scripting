@@ -17,3 +17,5 @@ echo $a
 echo printing the value of $a
 
 echo printing the value of ${a}
+
+echo printing the value of ${b}
