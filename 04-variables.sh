@@ -21,4 +21,4 @@ echo printing the value of ${a}
 
 echo printing the value of $b
 
-echo printing the value of $c 
+echo printing the value of c $c
