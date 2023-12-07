@@ -12,4 +12,8 @@ b=abc
 
 # how can we print a variable?
 
-echo printing the value of a $abcecho printing the value of a ${a}
+
+echo $a
+echo printing the value of $a
+
+echo printing the value of ${a}
