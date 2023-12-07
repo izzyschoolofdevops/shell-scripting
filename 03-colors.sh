@@ -20,4 +20,4 @@ echo -e "\e[35m I am printing Magenta color \e[0m"
 
 # Background + Foreground 
 
-echo -e "e\[43;34m I am printing background + foreground \e[0m"
+echo -e "\e[43;34m I am printing background + foreground \e[0m"
