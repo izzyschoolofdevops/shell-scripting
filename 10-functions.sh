@@ -13,4 +13,4 @@ stat() {
     date
     echo "function b56 is completed"
 }
-
+stat
