@@ -8,7 +8,9 @@
 
 stat() {
     echo "my name is isidore ekukanjuh"
-    echo "what is the date of today , $DATE"
+    echo "we are learning functions"
+    echo "Today date is:"
+    date
+    echo "function b56 is completed"
 }
 
-stat
