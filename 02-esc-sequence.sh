@@ -3,6 +3,15 @@ echo Welcome to shell scripting
 
 echo "my 1st day in shell scripting"
 
-echo "Line1\nLine2"
-echo Line2
-echo Line3
+#escape sequence characters
+
+# \n : New line 
+
+# \t : tab space 
+# we use e to enable the sequence spacing xters
+
+
+echo -e "Line1\nLine2"
+echo  -e Line3
+echo -e Line4
+echo -e Line5\tline6
