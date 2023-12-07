@@ -12,6 +12,6 @@ echo "my 1st day in shell scripting"
 
 
 echo -e "Line1\nLine2"
-echo  -e Line3\Line4
+echo  -e Line3\tine4
 
 echo -e Line5
