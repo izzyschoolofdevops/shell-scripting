@@ -2,11 +2,11 @@
 
 #printing or presentingh your work in a nice neatly way using colors 
 #colors       foreground          background
-red              31                   41
-green            32                    42
-yellow           33                    43
-blue             34                    44
-Magenta          36                    45
+#red              31                   41
+#green            32                    42
+#yellow           33                    43
+#blue             34                    44
+#Magenta          36                    45
 
 # syntax to print COLORS is : 
 
