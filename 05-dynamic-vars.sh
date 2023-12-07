@@ -1,5 +1,5 @@
 #!/bin/bash
 
-DATE="12DEC2023"
+DATE=$(date +%F)
 
 echo "good morining , today date is $DATE"
