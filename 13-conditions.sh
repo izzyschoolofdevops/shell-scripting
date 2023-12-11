@@ -12,7 +12,7 @@ case $ACTION in
            exit 0
            ;;
     stop) 
-        echo -e "\e[33m Restarting shipping service \e[0m"
+        echo -e "\e[33m stopping shipping service \e[0m"
         exit 1
         ;;
     restart)
