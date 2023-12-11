@@ -9,3 +9,5 @@ if [ "$ACTION" == "start" ] ; then
 
 fi
  
+ echo "It has not met any conditions"
+ echo "exit 100
