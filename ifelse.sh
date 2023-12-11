@@ -10,4 +10,4 @@ if [ "$ACTION" == "start" ] ; then
 fi
  
  echo "It has not met any conditions"
- exit 100
+ 
