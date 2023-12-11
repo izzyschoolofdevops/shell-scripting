@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "configuring frontend"
+echo "configuring  frontend"
