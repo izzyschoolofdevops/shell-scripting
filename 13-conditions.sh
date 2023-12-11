@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # conditions 
-ACTION=$1       #$1 REFRES TO TAKE THE 1ST ARGUEMENT 
+
+#$1 REFRES TO TAKE THE 1ST ARGUEMENT 
+
+
+ACTION=$1       
 case $ACTION in 
     start) 
            echo -e "\e[starting shipping service \e[0m"
