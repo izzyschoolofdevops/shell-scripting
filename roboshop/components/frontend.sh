@@ -1,8 +1,17 @@
 #!/bin/bash
+
+UID=$(id -u)
+
+
+if [ $UID -ne 0 ] ; then 
+    echo -e "\e[32m This script is expected to be excuted with sudo or as a root user \e[0m"
+    echo -e "\e[35m Example Usage: \n\t\t \e[0m sudo bash scriptName componentName"
+    exit 1 
+fi
+
 echo -e "***** \e[32m Confioguring frontend \e[0m*****"
 
-
-echo "Installing Nginx ;"
+echo "Installing Nginx :"
 yum install nginx -y
 
 yum install wget -y 
