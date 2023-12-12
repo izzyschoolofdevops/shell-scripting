@@ -1,6 +1,7 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
+COMPONENT=$1
 
 
 if [ $UID -ne 0 ] ; then 
@@ -19,6 +20,8 @@ else
     echo -e "\e[32m Failure \e[0m"
 
 fi
+
+echo -n "Downloading Component $1 :
 
 
 #systemctl enable nginx
