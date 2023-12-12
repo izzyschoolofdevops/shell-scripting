@@ -1,6 +1,6 @@
 #!/bin/bash
 
-UID=$(id -u)
+USER_ID=$(id -u)
 
 
 if [ $UID -ne 0 ] ; then 
