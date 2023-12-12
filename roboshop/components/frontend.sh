@@ -21,7 +21,14 @@ else
 
 fi
 
-echo -n "Downloading Component $1 :
+echo -n "Downloading Component $1 :"
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+if [ $? -eq 0 ] ; then 
+    echo -e "\e[32m success \e[0m"
+else 
+    echo -e "\e[32m Failure \e[0m"
+
+fi
 
 
 #systemctl enable nginx
