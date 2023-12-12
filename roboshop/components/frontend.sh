@@ -3,7 +3,7 @@ echo -e "***** \e[32m Confioguring frontend \e[0m*****"
 
 
 echo "Installing Nginx ;"
-yum install nginx -y 
+yum install nginx -y
 
 #systemctl enable nginx
 #systemctl start nginx
