@@ -12,9 +12,8 @@ fi
 echo -e "***** \e[32m Confioguring frontend \e[0m*****"
 
 echo "Installing Nginx :"
-yum install nginx -y
+yum install nginx -y      > /tmp/$1.log
 
-yum install wget -y 
 
 #systemctl enable nginx
 #systemctl start nginx
