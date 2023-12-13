@@ -3,7 +3,7 @@
 USER_ID=$(id -u)
 COMPONENT=mongo 
 LOGFILE="/tmp/${COMPONENT}.log"
-MONGO_REPO= "#https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
+MONGO_REPO= "https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
 stat() {
 if [ $1 -eq 0 ] ; then 
     echo -e "\e[32m success \e[0m"
