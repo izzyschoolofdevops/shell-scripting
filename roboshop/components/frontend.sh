@@ -30,13 +30,14 @@ stat $?
 echo -n "Downloading Component $COMPONENT :"
 curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
 stat $?
-  echo -n "Cleanup of $1 component :"
-  cd /usr/share/nginx/html
-  rm -rf *    &>> $LOGFILE
+
+echo -n "Cleanup of $1 component :"
+cd /usr/share/nginx/html
+rm -rf *    &>> $LOGFILE
+stat $?
 
 echo -n "Extracting $1: "
 unzip /tmp/frontend.zip      &>> $LOGFILE
-
 stat $?
 
 echo -n "configuring $1 :"
