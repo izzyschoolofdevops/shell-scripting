@@ -2,7 +2,7 @@
 
 USER_ID=$(id -u)
 COMPONENT=$1
-LOGFILE="/tmp/${COMPONENT.log}"
+LOGFILE="/tmp/${COMPONENT}.log"
 
 stat() {
 if [ $1 -eq 0 ] ; then 
@@ -15,7 +15,7 @@ fi
 }
 
 
-if [ $UID -ne 0 ] ; then 
+if [ $USER_ID -ne 0 ] ; then 
     echo -e "\e[32m This script is expected to be excuted with sudo or as a root user \e[0m"
     echo -e "\e[35m Example Usage: \n\t\t \e[0m sudo bash scriptName componentName"
     exit 1 
@@ -38,7 +38,7 @@ rm -rf *    &>> $LOGFILE
 stat $?
 
 echo -n "Extracting $1: "
-unzip /tmp/frontend.zip      &>> $LOGFILE
+unzip /tmp/$COMPONENT.zip      &>> $LOGFILE
 stat $?
 
 echo -n "configuring $1 :"
