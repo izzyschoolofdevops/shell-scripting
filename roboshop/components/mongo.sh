@@ -66,8 +66,3 @@ stat $?
 
 echo -e "***** \e[34m ${COMPONENT} Configuring is completed  \e[0m*****"
 
-# cd /tmp
-# unzip mongodb.zip
-# cd mongodb-main
-# mongo < catalogue.js
-# mongo < users.js
