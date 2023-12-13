@@ -3,6 +3,16 @@
 USER_ID=$(id -u)
 COMPONENT=$1
 
+stat() {
+if [ $1 -eq 0 ] ; then 
+    echo -e "\e[32m success \e[0m"
+else 
+    echo -e "\e[32m Failure \e[0m"
+
+fi
+
+}
+
 
 if [ $UID -ne 0 ] ; then 
     echo -e "\e[32m This script is expected to be excuted with sudo or as a root user \e[0m"
