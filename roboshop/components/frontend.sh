@@ -10,7 +10,7 @@ if [ $UID -ne 0 ] ; then
     exit 1 
 fi
 
-echo -e "***** \e[32m Confioguring frontend \e[0m*****"
+echo -e "***** \e[32m Confioguring $1 \e[0m*****"
 
 echo -n "Installing Nginx :"
 yum install nginx -y      &>> /tmp/frontend.log
@@ -66,15 +66,4 @@ else
     echo -e "\e[32m Failure \e[0m"
 fi
 
-
-
-#systemctl enable nginx
-#systemctl start nginx
-#curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
-#cd /usr/share/nginx/html
-# -rf *
-#unzip /tmp/frontend.zip
-#mv frontend-main/* .
-#mv static/* .
-#rm -rf frontend-main README.md
-#mv localhost.conf /etc/nginx/default.d/roboshop.conf
+echo -e "***** \e[34m $1 Configuring is completed  \e[0m*****"
