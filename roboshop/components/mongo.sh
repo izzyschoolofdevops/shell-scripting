@@ -3,7 +3,7 @@
 USER_ID=$(id -u)
 COMPONENT=mongo 
 LOGFILE="/tmp/${COMPONENT}.log"
-MONGO_REPO= "https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
+MONGO_REPO="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
 stat() {
 if [ $1 -eq 0 ] ; then 
     echo -e "\e[32m success \e[0m"
@@ -23,7 +23,7 @@ fi
 echo -e "***** \e[32m Configuring $COMPONENT \e[0m*****"
 
 echo -n "configuring $COMPONENT repo :"
-curl -s -o /etc/yum.repos.d/mongodb.repo $MONGO_REPO
+curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo $MONGO_REPO
 stat $?
 
 echo -n "configuring $COMPONENT :"
