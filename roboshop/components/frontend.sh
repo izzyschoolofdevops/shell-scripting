@@ -2,7 +2,7 @@
 
 USER_ID=$(id -u)
 COMPONENT=$1
-LOGFILE= "/tmp/${COMPONENT.log}"
+LOGFILE="/tmp/${COMPONENT.log}"
 
 stat() {
 if [ $1 -eq 0 ] ; then 
@@ -21,14 +21,14 @@ if [ $UID -ne 0 ] ; then
     exit 1 
 fi
 
-echo -e "***** \e[32m Confioguring $1 \e[0m*****"
+echo -e "***** \e[32m Configuring $COMPONENT \e[0m*****"
 
 echo -n "Installing Nginx :"
 yum install nginx -y      &>> $LOGFILE
 stat $?
 
-echo -n "Downloading Component $1 :"
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+echo -n "Downloading Component $COMPONENT :"
+curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
 stat $?
   echo -n "Cleanup of $1 component :"
   cd /usr/share/nginx/html
