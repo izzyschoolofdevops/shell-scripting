@@ -14,7 +14,6 @@ fi
 
 }
 
-
 if [ $USER_ID -ne 0 ] ; then 
     echo -e "\e[32m This script is expected to be excuted with sudo or as a root user \e[0m"
     echo -e "\e[35m Example Usage: \n\t\t \e[0m sudo bash scriptName componentName"
@@ -25,12 +24,9 @@ echo -e "***** \e[32m Configuring $COMPONENT \e[0m*****"
 
 echo -e "configuring $COMPONENT repo :"
 curl -s -o /etc/yum.repos.d/mongodb.repo $MONGO_REPO
-stat &?
+stat $?
 
-echo -e "configuring &COMPONENT repo :"
+echo -e "configuring $COMPONENT repo :"
 yum install -y mongodb-org  &>> ${LOGFILE}
 stat $?
 
-echo -e "Installing $COMPONENT :"
-yum install -y mongodb.org &>> ${LOGFILE}
-stat $?
