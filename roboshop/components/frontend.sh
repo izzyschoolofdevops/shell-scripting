@@ -29,6 +29,43 @@ else
     echo -e "\e[32m Failure \e[0m"
 
 fi
+  echo -n "Cleanup of $1 component :"
+  cd /usr/share/nginx/html
+  rm -rf *    &>> /tmp/frontend.log
+if [ $? -eq 0 ] ; then 
+    echo -e "\e[32m success \e[0m"
+else 
+    echo -e "\e[32m Failure \e[0m"
+fi
+echo -n "Extracting $1: "
+unzip /tmp/frontend.zip        &>> /tmp/frontend.log
+
+if [ $? -eq 0 ] ; then 
+    echo -e "\e[32m success \e[0m"
+else 
+    echo -e "\e[32m Failure \e[0m"
+fi
+
+echo -n "configuring $1 :"
+mv frontend-main/* .
+mv static/* .
+rm -rf frontend-main README.md
+mv localhost.conf /etc/nginx/default.d/roboshop.conf
+if [ $? -eq 0 ] ; then 
+    echo -e "\e[32m success \e[0m"
+else 
+    echo -e "\e[32m Failure \e[0m"
+fi
+echo -n "Restarting $1 :"
+systemctl enable nginx     &>> /tmp/frontend.log
+systemctl daemon-reload    &>> /tmp/frontend.log
+systemctl start nginx      &>> /tmp/frontend.log
+if [ $? -eq 0 ] ; then 
+    echo -e "\e[32m success \e[0m"
+else 
+    echo -e "\e[32m Failure \e[0m"
+fi
+
 
 
 #systemctl enable nginx
