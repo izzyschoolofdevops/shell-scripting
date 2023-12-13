@@ -26,7 +26,7 @@ echo -e "configuring $COMPONENT repo :"
 curl -s -o /etc/yum.repos.d/mongodb.repo $MONGO_REPO
 stat $?
 
-echo -e "configuring $COMPONENT repo :"
+echo -e "configuring $COMPONENT :"
 yum install -y mongodb-org  &>> ${LOGFILE}
 stat $?
 
