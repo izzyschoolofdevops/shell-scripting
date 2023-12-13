@@ -2,6 +2,7 @@
 
 USER_ID=$(id -u)
 COMPONENT=$1
+LOGFILE= "/tmp/${COMPONENT.log}"
 
 stat() {
 if [ $1 -eq 0 ] ; then 
@@ -23,7 +24,7 @@ fi
 echo -e "***** \e[32m Confioguring $1 \e[0m*****"
 
 echo -n "Installing Nginx :"
-yum install nginx -y      &>> /tmp/frontend.log
+yum install nginx -y      &>> $LOGFILE
 stat $?
 
 echo -n "Downloading Component $1 :"
@@ -31,11 +32,10 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend
 stat $?
   echo -n "Cleanup of $1 component :"
   cd /usr/share/nginx/html
-  rm -rf *    &>> /tmp/frontend.log
-stat$?
+  rm -rf *    &>> $LOGFILE
 
 echo -n "Extracting $1: "
-unzip /tmp/frontend.zip        &>> /tmp/frontend.log
+unzip /tmp/frontend.zip      &>> $LOGFILE
 
 stat $?
 
@@ -47,9 +47,9 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
 echo -n "Restarting $1 :"
-systemctl enable nginx     &>> /tmp/frontend.log
-systemctl daemon-reload    &>> /tmp/frontend.log
-systemctl start nginx      &>> /tmp/frontend.log
+systemctl enable nginx     &>> $LOGFILE
+systemctl daemon-reload    &>> $LOGFILE
+systemctl start nginx      &>> $LOGFILE
 stat $?
 
 echo -e "***** \e[34m $1 Configuring is completed  \e[0m*****"
