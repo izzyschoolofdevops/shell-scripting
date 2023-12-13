@@ -23,7 +23,7 @@ fi
 echo -e "***** \e[32m Configuring $COMPONENT \e[0m*****"
 
 echo -n "configuring $COMPONENT repo :"
-curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo $MONGO_REPO
+curl -s -o /etc/yum.repos.d/mongodb.repo  $MONGO_REPO
 stat $?
 
 echo -n "Installing  $COMPONENT :"
