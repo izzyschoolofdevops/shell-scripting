@@ -55,7 +55,7 @@ curl -s -L -o /tmp/mongodb.zip $SCHEMA_URL
 stat $?
 
 echo -n "Extracting $COMPONENT :"
-unzip -o /tmp/${COMPONENT}.zip   &>> $LOGFILE
+unzip -o /tmp/mongodb.zip   &>> $LOGFILE
 stat $?
 
 echo -n "Injecting schema :"
