@@ -21,12 +21,10 @@ if [ $USER_ID -ne 0 ] ; then
     exit 1 
 fi
 
-
-
 echo -n "Installing Nodejs :"
 yum install nodejs -y          &>> $LOGFILE
 stat $?
 
-echo -e "Creating $APPUSER:"
+echo -e "Creating $APPUSER :"
 useradd $APPUSER
 stat $?
