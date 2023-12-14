@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-COMPONENT=mongo 
+COMPONENT=mongodb 
 LOGFILE="/tmp/${COMPONENT}.log"
 MONGO_REPO="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
 SCHEMA_URL="https://github.com/stans-robot-project/mongodb/archive/main.zip"
@@ -60,8 +60,7 @@ unzip -o mongodb.zip   &>> $LOGFILE
 stat $?
 
 echo -n "Injecting schema :"     
-cd /tmp
-cd /mongodb-main  
+cd /tmp/mongodb-main  
 mongo < catalogue.js    &>> $LOGFILE
 mongo < users.js        
 stat $?
