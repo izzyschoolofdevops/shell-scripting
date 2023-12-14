@@ -47,7 +47,7 @@ stat $?
 echo -n "Starting $COMPONENT :"
 systemctl enable mongo     &>> $LOGFILE
 systemctl daemon-reload    &>> $LOGFILE
-systemctl start mongod     &>> $LOGFILE
+systemctl restart mongod     &>> $LOGFILE
 stat $?
 
 echo -n "Downloading $COMPONENT schema :"
@@ -60,7 +60,7 @@ unzip -o mongodb.zip   &>> $LOGFILE
 stat $?
 
 echo -n "Injecting schema :"
-cd /mongodb-main        &>> $LOGFILE
+cd /tmp/mongodb-main        &>> $LOGFILE
 mongo < catalogue.js    &>> $LOGFILE
 mongo < users.js        &>> $LOGFILE 
 stat $?
