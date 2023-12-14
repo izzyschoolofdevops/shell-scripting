@@ -1,5 +1,5 @@
 #!/bin/bash
-echo  -e  "configuring catalogue"
+
 USER_ID=$(id -u)
 COMPONENT=catalogue 
 LOGFILE="/tmp/${COMPONENT}.log"
