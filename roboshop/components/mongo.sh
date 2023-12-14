@@ -60,9 +60,10 @@ unzip -o mongodb.zip   &>> $LOGFILE
 stat $?
 
 echo -n "Injecting schema :"     
-cd /tmp/mongodb-main    &>> $LOGFILE
+cd /tmp
+cd /mongodb-main  
 mongo < catalogue.js    &>> $LOGFILE
-mongo < users.js        &>> $LOGFILE 
+mongo < users.js        
 stat $?
 
 echo -e "***** \e[34m ${COMPONENT} Configuring is completed  \e[0m*****"
