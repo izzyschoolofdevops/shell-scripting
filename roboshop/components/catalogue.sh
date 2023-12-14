@@ -1,10 +1,8 @@
 #!/bin/bash
-#!/bin/bash
 
 USER_ID=$(id -u)
 COMPONENT=catalogue 
 LOGFILE="/tmp/${COMPONENT}.log"
-
 
 
 stat() {
