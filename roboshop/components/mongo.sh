@@ -55,13 +55,14 @@ curl -s -L -o /tmp/mongodb.zip $SCHEMA_URL
 stat $?
 
 echo -n "Extracting $COMPONENT :"
+cd /tmp
 unzip -o mongodb.zip   &>> $LOGFILE
 stat $?
 
 echo -n "Injecting schema :"
 cd /tmp/mongodb-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js    &>> $LOGFILE
+mongo < users.js        &>> $LOGFILE 
 stat $?
 
 echo -e "***** \e[34m ${COMPONENT} Configuring is completed  \e[0m*****"
